@@ -5,6 +5,21 @@ let aramaMetni = "";
 const konteyner = document.getElementById("kartlar-konteyner");
 const aramaInput = document.getElementById("arama-input");
 const filtreBtnler = document.querySelectorAll(".filtre-btn");
+const temaToggleBtn = document.getElementById("temaToggleBtn");
+const savedTheme = localStorage.getItem("theme") || "light";
+document.documentElement.setAttribute("data-theme", savedTheme);
+
+
+if(temaToggleBtn) {
+    temaToggleBtn.textContent = savedTheme === "dark" ? "☀️ Açık" : "🌙 Koyu";
+    temaToggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        temaToggleBtn.textContent = newTheme === "dark" ? "☀️ Açık" : "🌙 Koyu";
+    });
+}
 
 // D2 aşamasında fetch ile güncellenecek kısım
 async function verileriGetir() {
