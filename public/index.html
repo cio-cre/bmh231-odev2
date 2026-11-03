@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kampüs Etkinlik Panosu</title>
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Bozok Etkinlik</div>
+    <nav>
+      <a href="#liste">Etkinlikler</a>
+      <a href="#oner">Etkinlik Öner</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="liste">
+      <h1>Yaklaşan Kampüs Etkinlikleri</h1>
+      <!-- Filtreleme ve Arama Alanı -->
+      <div class="filtre-kutusu">
+        <div class="butonlar">
+          <button class="filtre-btn secili" data-tur="tumu">Tümü</button>
+          <button class="filtre-btn" data-tur="atolye">Atölye</button>
+          <button class="filtre-btn" data-tur="soylesi">Söyleşi</button>
+          <button class="filtre-btn" data-tur="topluluk">Topluluk</button>
+        </div>
+        <input type="text" id="arama-input" placeholder="Etkinlik ara (örn. Git, Web)...">
+      </div>
+      
+      <!-- Kartların Basılacağı Alan -->
+      <div id="kartlar-konteyner"></div>
+    </section>
+
+    <section id="oner">
+      <h2>Etkinlik Öner</h2>
+      <form id="etkinlik-form">
+        <div>
+          <label for="baslik">Etkinlik Adı:</label>
+          <input type="text" id="baslik" name="baslik">
+        </div>
+        <div>
+          <label for="tarih">Tarih:</label>
+          <input type="date" id="tarih" name="tarih">
+        </div>
+        <div>
+          <label for="eposta">E-posta Adresi:</label>
+          <input type="email" id="eposta" name="eposta">
+        </div>
+        <button type="submit">Öneri Gönder</button>
+        <div id="form-mesaj"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Yozgat Bozok Üniversitesi - Bilgisayar Mühendisliği</p>
+  </footer>
+
+  <script src="betik.js"></script>
+</body>
+</html>

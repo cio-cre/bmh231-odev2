@@ -1,0 +1,86 @@
+:root {
+  --ana-renk: #0f766e;
+  --arka-plan: #f8fafc;
+  --metin-renk: #1e293b;
+  --kart-arkaplan: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--arka-plan);
+  color: var(--metin-renk);
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--ana-renk);
+  color: white;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Etkinlik Kartları Grid Yapısı */
+#kartlar-konteyner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.kart {
+  background-color: var(--kart-arkaplan);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.butonlar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filtre-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ana-renk);
+  background: white;
+  color: var(--ana-renk);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filtre-btn.secili {
+  background-color: var(--ana-renk);
+  color: white;
+}
+
+#arama-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+footer p{
+    text-align: center;
+}

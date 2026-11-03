@@ -1,0 +1,6 @@
+[
+  { "id": 1, "baslik": "Web Programlama Atölyesi", "tur": "atolye", "tarih": "2026-11-10", "yer": "Lab 3", "kontenjan": 30 },
+  { "id": 2, "baslik": "Tanışma Toplantısı", "tur": "topluluk", "tarih": "2026-11-12", "yer": "Konferans Salonu", "kontenjan": 120 },
+  { "id": 3, "baslik": "YZ Söyleşisi", "tur": "soylesi", "tarih": "2026-11-15", "yer": "Amfi 1", "kontenjan": 200 },
+  { "id": 4, "baslik": "Git Atölyesi", "tur": "atolye", "tarih": "2026-11-18", "yer": "Lab 2", "kontenjan": 25 }
+]
