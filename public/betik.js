@@ -15,7 +15,26 @@ const kalanSureP = document.createElement("p");
 kalanSureP.style.fontWeight = "bold";
 kalanSureP.style.color = farkGun < 0 ? "var(--hata-renk)" : "var(--ikincil-renk)";
 kalanSureP.textContent = farkGun < 0 ? "Etkinlik sona erdi." : `Kalan Süre: ${farkGun} gün`;
+const favBtn = document.createElement("button");
+let favoriler = JSON.parse(localStorage.getItem("favoriler")) || [];
+const isFav = favoriler.includes(etkinlik.id);
+favBtn.textContent = isFav ? "❤️ Favorilerde" : "🤍 Favori Ekle";
+favBtn.style.cssText = "background:none; border:none; cursor:pointer; font-size:0.9rem; margin-top:0.5rem;";
 
+
+
+favBtn.addEventListener("click", () => {
+    let favs = JSON.parse(localStorage.getItem("favoriler")) || [];
+    if(favs.includes(etkinlik.id)) {
+        favs = favs.filter(id => id !== etkinlik.id); // favoriden çıkar// favoriden çıkar
+        favBtn.textContent = "🤍 Favori Ekle";
+    } else {
+        favs.push(etkinlik.id);
+        favBtn.textContent = "❤️ Favorilerde";
+    }
+    localStorage.setItem("favoriler", JSON.stringify(favs));
+});
+kart.appendChild(favBtn);
 
 if(temaToggleBtn) {
     temaToggleBtn.textContent = savedTheme === "dark" ? "☀️ Açık" : "🌙 Koyu";
