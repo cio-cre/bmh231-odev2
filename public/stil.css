@@ -1,8 +1,21 @@
 :root {
-  --ana-renk: #0f766e;
-  --arka-plan: #f8fafc;
-  --metin-renk: #1e293b;
-  --kart-arkaplan: #ffffff;
+    --ana-renk: #1e3a8a;
+    --ikincil-renk: #3b82f6;
+    --arkaplan-renk: #f8fafc;
+    --kart-arkaplan: #ffffff;
+    --yazi-renk: #1e293b;
+    --gri-renk: #64748b;
+    --hata-renk: #ef4444;
+    --basari-renk: #22c55e;
+}
+
+[data-theme="dark"] {
+    --ana-renk: #3b82f6;
+    --ikincil-renk: #60a5fa;
+    --arkaplan-renk: #0f172a;
+    --kart-arkaplan: #1e293b;
+    --yazi-renk: #f8fafc;
+    --gri-renk: #94a3b8;
 }
 
 * {
