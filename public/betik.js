@@ -8,6 +8,13 @@ const filtreBtnler = document.querySelectorAll(".filtre-btn");
 const temaToggleBtn = document.getElementById("temaToggleBtn");
 const savedTheme = localStorage.getItem("theme") || "light";
 document.documentElement.setAttribute("data-theme", savedTheme);
+const bugunTarih = new Date();
+const etkinlikTarihi = new Date(etkinlik.tarih);
+const farkGun = Math.ceil((etkinlikTarihi - bugunTarih) / (1000 * 60 * 60 * 24));
+const kalanSureP = document.createElement("p");
+kalanSureP.style.fontWeight = "bold";
+kalanSureP.style.color = farkGun < 0 ? "var(--hata-renk)" : "var(--ikincil-renk)";
+kalanSureP.textContent = farkGun < 0 ? "Etkinlik sona erdi." : `Kalan Süre: ${farkGun} gün`;
 
 
 if(temaToggleBtn) {
@@ -20,6 +27,8 @@ if(temaToggleBtn) {
         temaToggleBtn.textContent = newTheme === "dark" ? "☀️ Açık" : "🌙 Koyu";
     });
 }
+
+
 
 // D2 aşamasında fetch ile güncellenecek kısım
 async function verileriGetir() {
